@@ -24,6 +24,10 @@ fn build_ui(app: &Application) {
         .margin_end(12)
         .build();
 
+    button.connect_clicked(|button| {
+        button.set_label("Heisan sveisan, verden!");
+    });
+
     // lag vindu og sett tittel på han
     let window = ApplicationWindow::builder()
         .application(app)
