@@ -4,7 +4,7 @@ use gtk::{glib, Application, ApplicationWindow, Button};
 const APP_ID: &str = "no.brunhenriksen.ordKode";
 
 fn main() -> glib::ExitCode {
-    // lag ny applikasjonen
+    // lag ny applikasjon
     let app = Application::builder().application_id(APP_ID).build();
 
     // connect til "activate" signalet av 'app'
