@@ -24,7 +24,7 @@ jobs:
           libglib2.0-dev \
           pkg-config \
           libpango1.0-dev \
-          gdk-pixbuf-2.0 \
+          gdk-pixbuf-2.0-dev \
           libgtk-4-dev
         sudo apt-get clean
 
