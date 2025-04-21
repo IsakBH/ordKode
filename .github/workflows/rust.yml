@@ -35,21 +35,21 @@ jobs:
       run: dpkg -l | grep gtk
 
     - name: Debug pkg-config
-      run: pkg-config --modversion gtk4
+      run: |
+        echo "Checking GTK4 version..."
+        pkg-config --modversion gtk4
+        echo "Checking GTK4 libraries..."
+        pkg-config --libs gtk4
 
-    - name: Locate GTK4 pkg-config Files
-      run: find /usr -name gtk4.pc
-
-    - name: Print Environment
-      run: env
-
-    - name: Clear Cargo Cache
-      run: cargo clean
-
-    - name: Build
+    - name: Capture Detailed Build Logs
       env:
         PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
-      run: cargo build --verbose
+      run: cargo build --verbose 2>&1 | tee build.log
+
+    - name: Build with Features
+      env:
+        PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
+      run: cargo build --verbose --features "gdk4/gdk4-sys"
 
     - name: Run tests
       env:
