@@ -26,11 +26,25 @@ jobs:
           gdk-pixbuf-2.0-dev \
           libgtk-4-dev \
           libcairo2-dev \
-          libgdk-pixbuf2.0-dev
+          libgdk-pixbuf2.0-dev \
+          libatk1.0-dev \
+          libgirepository1.0-dev
         sudo apt-get clean
+
+    - name: Verify GTK4 Installation
+      run: dpkg -l | grep gtk
 
     - name: Debug pkg-config
       run: pkg-config --modversion gtk4
+
+    - name: Locate GTK4 pkg-config Files
+      run: find /usr -name gtk4.pc
+
+    - name: Print Environment
+      run: env
+
+    - name: Clear Cargo Cache
+      run: cargo clean
 
     - name: Build
       env:
