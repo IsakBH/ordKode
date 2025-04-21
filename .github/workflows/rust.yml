@@ -21,6 +21,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libglib2.0-dev pkg-config
+        sudo apt-get install -y pango
 
     - name: Build
       env:
