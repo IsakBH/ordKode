@@ -15,15 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v3
+
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libglib2.0-dev pkg-config
-        sudo apt-get install -y libpango1.0-dev
-        sudo apt-get install -y gdk-pixbuf-2.0
-        sudo apt-get install -y libgtk-4-dev
+        sudo apt-get install -y \
+          libglib2.0-dev \
+          pkg-config \
+          libpango1.0-dev \
+          gdk-pixbuf-2.0 \
+          libgtk-4-dev
+        sudo apt-get clean
 
     - name: Build
       env:
