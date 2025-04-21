@@ -18,10 +18,10 @@ fn build_ui(app: &Application) {
     // lag en knapp med label og margins
     let button = Button::builder()
         .label("Trykk på meg!")
-        .margin_top(12)
-        .margin_bottom(12)
-        .margin_start(12)
-        .margin_end(12)
+        .margin_top(24)
+        .margin_bottom(24)
+        .margin_start(24)
+        .margin_end(24)
         .build();
 
     button.connect_clicked(|button| {
