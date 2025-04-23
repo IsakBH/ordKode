@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gdk4 = { version = "0.9", features = ["vulkan"], optional = true } # Marked as optional
-gdk4-sys = "0.9"
+gdk4 = { version = "0.9.6", features = ["vulkan"], optional = true } # Marked as optional
+gdk4-sys = "0.9.6"
 
 [features]
 default = ["gdk4"] # Retains gdk4 in default features
