@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gdk4 = { version = "0.9.6" }
+gdk4 = { version = "0.9.6", optional = true }
 gdk4-sys = "0.9.6"
 
 [features]
