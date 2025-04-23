@@ -4,9 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gdk4 = { version = "0.9", features = ["vulkan"] } # Adjust version and features as required
-gdk4-sys = "0.9" # Add gdk4-sys dependency
+gdk4 = { version = "0.9", features = ["vulkan"] } # Retain only the valid features
+gdk4-sys = "0.9" # Keep this as a separate dependency
 
 [features]
 default = ["gdk4"]
-gdk4 = ["gdk4/gdk4-sys"]
