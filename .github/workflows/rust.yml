@@ -28,7 +28,8 @@ jobs:
           libcairo2-dev \
           libgdk-pixbuf2.0-dev \
           libatk1.0-dev \
-          libgirepository1.0-dev
+          libgirepository1.0-dev \
+          libgdk3.0-dev
         sudo apt-get clean
 
     - name: Verify GTK4 Installation
@@ -46,10 +47,10 @@ jobs:
         PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
       run: cargo build --verbose 2>&1 | tee build.log
 
-    - name: Build with Features
+    - name: Build
       env:
         PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
-      run: cargo build --verbose --features "gdk4/gdk4-sys"
+      run: cargo build --verbose
 
     - name: Run tests
       env:
