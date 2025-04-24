@@ -3,27 +3,10 @@
 version = 4
 
 [[package]]
-name = "atk"
-version = "0.18.2"
+name = "anyhow"
+version = "1.0.98"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "241b621213072e993be4f6f3a9e4b45f65b7e6faad43001be957184b7bb1824b"
-dependencies = [
- "atk-sys",
- "glib 0.18.5",
- "libc",
-]
-
-[[package]]
-name = "atk-sys"
-version = "0.18.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5e48b684b0ca77d2bbadeef17424c2ea3c897d44d566a1617e7e8f30614d086"
-dependencies = [
- "glib-sys 0.18.1",
- "gobject-sys 0.18.0",
- "libc",
- "system-deps 6.2.2",
-]
+checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
 
 [[package]]
 name = "autocfg"
@@ -185,21 +168,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gdk"
-version = "0.18.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9f245958c627ac99d8e529166f9823fb3b838d1d41fd2b297af3075093c2691"
-dependencies = [
- "cairo-rs 0.18.5",
- "gdk-pixbuf 0.18.5",
- "gdk-sys",
- "gio 0.18.4",
- "glib 0.18.5",
- "libc",
- "pango 0.18.3",
-]
-
-[[package]]
 name = "gdk-pixbuf"
 version = "0.18.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -251,20 +219,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "gdk-sys"
-version = "0.18.2"
+name = "gdk4"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c2d13f38594ac1e66619e188c6d5a1adb98d11b2fcf7894fc416ad76aa2f3f7"
+checksum = "7edb019ad581f8ecf8ea8e4baa6df7c483a95b5a59be3140be6a9c3b0c632af6"
 dependencies = [
- "cairo-sys-rs 0.18.2",
- "gdk-pixbuf-sys 0.18.0",
- "gio-sys 0.18.1",
- "glib-sys 0.18.1",
- "gobject-sys 0.18.0",
+ "cairo-rs 0.18.5",
+ "gdk-pixbuf 0.18.5",
+ "gdk4-sys 0.7.2",
+ "gio 0.18.4",
+ "glib 0.18.5",
  "libc",
- "pango-sys 0.18.0",
- "pkg-config",
- "system-deps 6.2.2",
+ "pango 0.18.3",
 ]
 
 [[package]]
@@ -275,11 +241,28 @@ checksum = "4850c9d9c1aecd1a3eb14fadc1cdb0ac0a2298037e116264c7473e1740a32d60"
 dependencies = [
  "cairo-rs 0.20.7",
  "gdk-pixbuf 0.20.9",
- "gdk4-sys",
+ "gdk4-sys 0.9.6",
  "gio 0.20.9",
  "glib 0.20.9",
  "libc",
  "pango 0.20.9",
+]
+
+[[package]]
+name = "gdk4-sys"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dbab43f332a3cf1df9974da690b5bb0e26720ed09a228178ce52175372dcfef0"
+dependencies = [
+ "cairo-sys-rs 0.18.2",
+ "gdk-pixbuf-sys 0.18.0",
+ "gio-sys 0.18.1",
+ "glib-sys 0.18.1",
+ "gobject-sys 0.18.0",
+ "libc",
+ "pango-sys 0.18.0",
+ "pkg-config",
+ "system-deps 6.2.2",
 ]
 
 [[package]]
@@ -475,55 +458,111 @@ dependencies = [
 ]
 
 [[package]]
-name = "gtk"
-version = "0.18.2"
+name = "graphene-rs"
+version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fd56fb197bfc42bd5d2751f4f017d44ff59fbb58140c6b49f9b3b2bdab08506a"
+checksum = "3b2228cda1505613a7a956cca69076892cfbda84fc2b7a62b94a41a272c0c401"
 dependencies = [
- "atk",
- "cairo-rs 0.18.5",
- "field-offset",
- "futures-channel",
- "gdk",
- "gdk-pixbuf 0.18.5",
- "gio 0.18.4",
  "glib 0.18.5",
- "gtk-sys",
- "gtk3-macros",
+ "graphene-sys",
  "libc",
- "pango 0.18.3",
- "pkg-config",
 ]
 
 [[package]]
-name = "gtk-sys"
-version = "0.18.2"
+name = "graphene-sys"
+version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f29a1c21c59553eb7dd40e918be54dccd60c52b049b75119d5d96ce6b624414"
+checksum = "cc4144cee8fc8788f2a9b73dc5f1d4e1189d1f95305c4cb7bd9c1af1cfa31f59"
 dependencies = [
- "atk-sys",
+ "glib-sys 0.18.1",
+ "libc",
+ "pkg-config",
+ "system-deps 6.2.2",
+]
+
+[[package]]
+name = "gsk4"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d958e351d2f210309b32d081c832d7de0aca0b077aa10d88336c6379bd01f7e"
+dependencies = [
+ "cairo-rs 0.18.5",
+ "gdk4 0.7.3",
+ "glib 0.18.5",
+ "graphene-rs",
+ "gsk4-sys",
+ "libc",
+ "pango 0.18.3",
+]
+
+[[package]]
+name = "gsk4-sys"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "12bd9e3effea989f020e8f1ff3fa3b8c63ba93d43b899c11a118868853a56d55"
+dependencies = [
  "cairo-sys-rs 0.18.2",
- "gdk-pixbuf-sys 0.18.0",
- "gdk-sys",
- "gio-sys 0.18.1",
+ "gdk4-sys 0.7.2",
  "glib-sys 0.18.1",
  "gobject-sys 0.18.0",
+ "graphene-sys",
  "libc",
  "pango-sys 0.18.0",
  "system-deps 6.2.2",
 ]
 
 [[package]]
-name = "gtk3-macros"
-version = "0.18.2"
+name = "gtk4"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52ff3c5b21f14f0736fed6dcfc0bfb4225ebf5725f3c0209edeec181e4d73e9d"
+checksum = "5aeb51aa3e9728575a053e1f43543cd9992ac2477e1b186ad824fd4adfb70842"
 dependencies = [
+ "cairo-rs 0.18.5",
+ "field-offset",
+ "futures-channel",
+ "gdk-pixbuf 0.18.5",
+ "gdk4 0.7.3",
+ "gio 0.18.4",
+ "glib 0.18.5",
+ "graphene-rs",
+ "gsk4",
+ "gtk4-macros",
+ "gtk4-sys",
+ "libc",
+ "pango 0.18.3",
+]
+
+[[package]]
+name = "gtk4-macros"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d57ec49cf9b657f69a05bca8027cff0a8dfd0c49e812be026fc7311f2163832f"
+dependencies = [
+ "anyhow",
  "proc-macro-crate 1.3.1",
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.100",
+ "syn 1.0.109",
+]
+
+[[package]]
+name = "gtk4-sys"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "54d8c4aa23638ce9faa2caf7e2a27d4a1295af2155c8e8d28c4d4eeca7a65eb8"
+dependencies = [
+ "cairo-sys-rs 0.18.2",
+ "gdk-pixbuf-sys 0.18.0",
+ "gdk4-sys 0.7.2",
+ "gio-sys 0.18.1",
+ "glib-sys 0.18.1",
+ "gobject-sys 0.18.0",
+ "graphene-sys",
+ "gsk4-sys",
+ "libc",
+ "pango-sys 0.18.0",
+ "system-deps 6.2.2",
 ]
 
 [[package]]
@@ -585,9 +624,9 @@ checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 name = "ordKode"
 version = "0.1.0"
 dependencies = [
- "gdk4",
- "gdk4-sys",
- "gtk",
+ "gdk4 0.9.6",
+ "gdk4-sys 0.9.6",
+ "gtk4",
 ]
 
 [[package]]
@@ -793,6 +832,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
 dependencies = [
  "proc-macro2",
+ "quote",
  "unicode-ident",
 ]
 

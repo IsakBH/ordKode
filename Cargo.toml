@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 gdk4 = { version = "0.9.6", optional = true }
 gdk4-sys = { version = "0.9.6", optional = true }
-gtk = "0.18.2"
+gtk = { version = "0.7", package = "gtk4" }
 
 [features]
 default = []
